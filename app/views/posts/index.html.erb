@@ -1,0 +1,18 @@
+<p style="line-height: 80%">
+
+<h1>Posts</h1>
+
+<% @posts.each do |post| %>
+
+      <p style="line-height: 80%">
+
+      <div class="card bg-light p-3">
+        <div class="card-block">
+          <h3 class="card-title"><%= post.title %></h3>
+          <p class="card-text"><%=h truncate(post.body, :length => 600) %></p>
+          <%= link_to 'Read More', post_path(post), :class => 'btn btn-default' %>
+        </div>
+      </div>
+      <p style="line-height: 80%">
+
+<% end %>

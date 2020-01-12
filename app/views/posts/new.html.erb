@@ -1,0 +1,28 @@
+<p style="line-height: 80%">
+
+<h1>Add Posts</h1>
+
+<p style="line-height: 80%">
+
+<%= form_for :post, url: posts_path, local: true do |f| %>
+  <% if @post.errors.any? %>
+      <% @post.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+    <% end %>
+
+<p>
+  <%= f.label :title %><br>
+  <%= f.text_field(:title, {:class => 'form-control'}) %>
+</p>
+
+<div class="form-group">
+  <%= f.label :body%><br>
+  <%= f.text_area(:body, {:class => 'form_control', :id => 'exampleFormControlTextarea3', :rows => '17', :cols => '100'}) %>
+</div>
+
+
+<p>
+  <%= f.submit(:class => 'btn btn-primary') %>
+</p>
+<%end%>
