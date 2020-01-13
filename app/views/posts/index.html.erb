@@ -1,3 +1,10 @@
+<div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Simple Blog</h1>
+      <p>This is simple blog with RoR :)</p>
+      <p><a class="btn btn-secondary btn-lg" href="/about" role="button">Learn more &raquo;</a></p>
+    </div>
+
 <p style="line-height: 80%">
 
 <h1>Posts</h1>
@@ -10,7 +17,7 @@
         <div class="card-block">
           <h3 class="card-title"><%= post.title %></h3>
           <p class="card-text"><%=h truncate(post.body, :length => 600) %></p>
-          <%= link_to 'Read More', post_path(post), :class => 'btn btn-default' %>
+          <p><a class="btn btn-secondary btn-sm" href= <%= post_path(post) %> role="button">Read More &raquo;</a></p>
         </div>
       </div>
       <p style="line-height: 80%">
